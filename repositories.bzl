@@ -104,14 +104,11 @@ def grpc_java_repositories():
     )
 
 def com_google_protobuf():
-    # proto_library rules implicitly depend on @com_google_protobuf//:protoc,
-    # which is the proto-compiler.
-    # This statement defines the @com_google_protobuf repo.
-    http_archive(
+    native.new_local_repository(
         name = "com_google_protobuf",
-        sha256 = "b37e96e81842af659605908a421960a5dc809acbc888f6b947bc320f8628e5b1",
-        strip_prefix = "protobuf-3.12.0",
-        urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.12.0.zip"],
+        path = ".",
+        build_file = "./protobuf.BUILD",
+        workspace_file = "./protobuf.WORKSPACE"
     )
 
 def com_google_protobuf_javalite():

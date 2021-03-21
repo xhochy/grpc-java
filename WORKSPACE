@@ -30,6 +30,6 @@ load("//:repositories.bzl", "grpc_java_repositories")
 
 grpc_java_repositories()
 
-load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+load("//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
